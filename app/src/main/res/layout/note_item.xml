@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/note_background"
+    android:layout_margin="10dp">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How to draw a professional wireframe?"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        />
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="For wireframe, you need to have an access to the "
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:layout_marginTop="12dp"
+        />
+
+
+
+
+</LinearLayout>

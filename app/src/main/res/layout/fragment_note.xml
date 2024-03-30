@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NoteFragment">
+
+  <TextView
+      android:id="@+id/add_edit_text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="32dp"
+      android:layout_marginTop="32dp"
+      android:layout_marginEnd="16dp"
+      android:text="Edit Note"
+      android:textColor="@color/black"
+      android:textSize="40sp"
+      android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/btn_delete"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="120dp"
+        android:src="@drawable/ic_add"
+        android:layout_toRightOf="@+id/add_edit_text"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_edit_text"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Title"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/txt_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:hint="Whats your title?"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textColorHint="@color/light_gray"
+            android:background="@android:color/transparent"
+            android:singleLine="true"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/light_gray"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Description"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/txt_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:hint="Whats your description?"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textColorHint="@color/light_gray"
+            android:background="@android:color/transparent"
+            android:gravity="top|start"
+            android:inputType="textMultiLine"
+            android:lines="10"
+            android:scrollHorizontally="false"
+            android:scrollbars="vertical"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/light_gray"
+            />
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="submit"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+</RelativeLayout>

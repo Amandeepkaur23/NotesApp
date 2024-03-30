@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingTop="32dp"
+        android:paddingBottom="60dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Welcome Back!"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Login to access your notes"
+            android:textSize="16sp"
+            android:textColor="@color/light_gray"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="72dp"
+            android:text="Email"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/txt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:hint="aman@gmail.com"
+            android:textColor="@color/black"
+            android:textColorHint="@color/light_gray"
+            android:background="@android:color/transparent"
+            android:textSize="16sp"
+            android:singleLine="true"
+            android:inputType="textEmailAddress"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/light_gray"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Password"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/txt_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:hint="......"
+            android:textColor="@color/black"
+            android:textColorHint="@color/light_gray"
+            android:textSize="16sp"
+            android:background="@android:color/transparent"
+            android:singleLine="true"
+            android:inputType="textPassword"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/light_gray"/>
+
+        <TextView
+            android:id="@+id/txt_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text=" "
+            android:textColor="#2493EC"
+            android:textSize="12sp"/>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:layout_marginTop="40dp"
+            android:text="Login"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/btn_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="@string/txt_no_account_signup"
+            android:textSize="14sp"/>
+       <TextView
+           android:visibility="gone"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/progress_bar"
+           android:layout_gravity="center"
+           android:text="loading..."
+           android:textSize="20sp"
+           android:textColor="@color/black"
+           android:textStyle="bold"
+           android:layout_marginTop="20dp"/>
+
+
+    </LinearLayout>
+
+</ScrollView>

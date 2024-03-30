@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainFragment">
+
+   <TextView
+       android:id="@+id/textView"
+       android:layout_width="300dp"
+       android:layout_height="wrap_content"
+       android:text="Notes"
+       android:textStyle="bold"
+       android:textColor="@color/black"
+       android:textSize="40sp"
+       android:layout_marginLeft="20dp"
+       android:layout_marginTop="24dp"
+       />
+    <TextView
+        android:id="@+id/SignOut"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Sign Out"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="24dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notesRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/textView"
+        android:layout_margin="8dp"
+        tools:listitem="@layout/note_item"
+        />
+
+    <TextView
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:text="Loading..."
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#AFB5AF"
+        android:src="@drawable/ic_add"
+        app:fabSize="normal" />
+
+
+</RelativeLayout>
