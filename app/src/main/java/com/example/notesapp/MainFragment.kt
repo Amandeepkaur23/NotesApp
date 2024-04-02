@@ -1,7 +1,9 @@
 package com.example.notesapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +16,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.notesapp.databinding.FragmentMainBinding
 import com.example.notesapp.models.NoteResponse
+import com.example.notesapp.utils.Constants.TAG
 import com.example.notesapp.utils.NetworkResult
 import com.example.notesapp.utils.NetworkUtils
 import com.example.notesapp.utils.TokenManager
@@ -46,7 +49,7 @@ class MainFragment : Fragment() {
 
         _binding = FragmentMainBinding.inflate(inflater, container, false)
         //pass function as parameter
-        adapter = NoteAdapter(::onNoteClick)
+        adapter = NoteAdapter(::onNoteClick, ::shareNote)
         return binding.root
     }
 
@@ -58,17 +61,18 @@ class MainFragment : Fragment() {
             StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         binding.notesRV.adapter = adapter
 
-        if(networkUtils.isInternetAvailable(requireContext())){
+        if (networkUtils.isInternetAvailable(requireContext())) {
             binding.addNote.isVisible = true
             binding.addNote.setOnClickListener {
                 findNavController().navigate(R.id.action_mainFragment_to_noteFragment)
             }
-        } else{
+        } else {
             binding.addNote.isVisible = false
         }
         binding.SignOut.setOnClickListener {
             tokenManager.clearCredentials()
-            Toast.makeText(requireContext(), "You're successfully signed out!!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "You're successfully signed out!!", Toast.LENGTH_SHORT)
+                .show()
             findNavController().popBackStack()
             requireActivity().finish()
         }
@@ -101,9 +105,18 @@ class MainFragment : Fragment() {
         //pass note response that is note with title and description in noteFragment from mainFragment
         val bundle = Bundle()
         bundle.putString("note", Gson().toJson(noteResponse))
-        if(networkUtils.isInternetAvailable(requireContext())){
+        if (networkUtils.isInternetAvailable(requireContext())) {
             findNavController().navigate(R.id.action_mainFragment_to_noteFragment, bundle)
         }
+    }
+
+    private fun shareNote(noteResponse: NoteResponse) {
+        Log.d(TAG, "btn clicked")
+        Log.d(TAG, noteResponse.title)
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "text/plain"
+        intent.putExtra(Intent.EXTRA_TEXT,  "Note Title is ${noteResponse.title} and Description is ${noteResponse.discription}")
+        startActivity(intent)
     }
 
     override fun onDestroy() {

@@ -1,6 +1,6 @@
 package com.example.notesapp
 
-import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -11,12 +11,15 @@ import com.example.notesapp.models.NoteResponse
 import com.example.notesapp.utils.NetworkUtils
 import javax.inject.Inject
 
-class NoteAdapter(private val onNoteClicked: (NoteResponse) -> Unit) : ListAdapter<NoteResponse, NoteAdapter.NoteViewHolder>(ComparatorDiffUtil()) {
+class NoteAdapter(
+    private val onNoteClicked: (NoteResponse) -> Unit,
+    private val shareNote: (NoteResponse) -> Unit) :
+    ListAdapter<NoteResponse, NoteAdapter.NoteViewHolder>(ComparatorDiffUtil()) {
 
     @Inject
     lateinit var networkUtils: NetworkUtils
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
-       val binding = NoteItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = NoteItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return NoteViewHolder(binding)
     }
 
@@ -35,6 +38,9 @@ class NoteAdapter(private val onNoteClicked: (NoteResponse) -> Unit) : ListAdapt
             binding.desc.text = noteResponse.discription
             binding.root.setOnClickListener{
                 onNoteClicked(noteResponse)
+            }
+            binding.btnShare.setOnClickListener {
+                shareNote(noteResponse)
             }
         }
     }

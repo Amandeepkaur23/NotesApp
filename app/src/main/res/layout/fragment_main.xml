@@ -34,11 +34,11 @@
         android:id="@+id/notesRV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_below="@+id/textView"
         android:layout_margin="8dp"
-        tools:listitem="@layout/note_item"
-        />
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="8dp"
+        tools:listitem="@layout/note_item" />
 
     <TextView
         android:id="@+id/progress_bar"
@@ -64,7 +64,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:backgroundTint="#AFB5AF"
-        android:src="@drawable/ic_add"
+        android:src="@drawable/share"
         app:fabSize="normal" />
 
 
